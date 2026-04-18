@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="logo">📶</div>
+      <div class="title">MAC → Device</div>
+    </div>
+
+    <div class="form">
+      <label>MAC ADDRESS</label>
+      <input id="mac" placeholder="00:00:00:00:00:00">
+
+      <label>DEVICE NAME</label>
+      <input id="name" placeholder="e.g. Living Room TV">
+
+      <button id="add">+ Add Device</button>
+      <div id="error" class="error"></div>
+    </div>
+
+    <div class="saved">
+      <div class="saved-header">
+        <span>SAVED DEVICES</span>
+      </div>
+      <ul id="list"></ul>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

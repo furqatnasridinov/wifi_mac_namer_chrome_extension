@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "WiFi MAC Namer",
+  "version": "1.0",
+  "description": "Replace MAC addresses with device names",
+  "permissions": ["storage"],
+  "host_permissions": ["http://10.0.0.10/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://10.0.0.10/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
