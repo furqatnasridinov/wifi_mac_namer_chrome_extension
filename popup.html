@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>WiFi MAC Namer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,16 +13,16 @@
       <div class="title">MAC → Device</div>
     </div>
 
-    <div class="form">
-      <label>MAC ADDRESS</label>
-      <input id="mac" placeholder="00:00:00:00:00:00">
+    <form class="form" id="device-form">
+      <label for="mac">MAC ADDRESS</label>
+      <input id="mac" placeholder="00:00:00:00:00:00" autocomplete="off" spellcheck="false" aria-describedby="error">
 
-      <label>DEVICE NAME</label>
-      <input id="name" placeholder="e.g. Living Room TV">
+      <label for="name">DEVICE NAME</label>
+      <input id="name" placeholder="e.g. Living Room TV" autocomplete="off" aria-describedby="error">
 
-      <button id="add">+ Add Device</button>
-      <div id="error" class="error"></div>
-    </div>
+      <button id="add" type="submit">+ Add Device</button>
+      <div id="error" class="error" role="alert"></div>
+    </form>
 
     <div class="saved">
       <div class="saved-header">
@@ -31,6 +32,7 @@
     </div>
   </div>
 
+  <script src="mac.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

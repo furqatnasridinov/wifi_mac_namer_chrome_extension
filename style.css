@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial;
@@ -5,7 +9,7 @@ body {
 }
 
 .container {
-  width: 300px;
+  width: 330px;
   padding: 15px;
 }
 
@@ -101,6 +105,8 @@ li:hover {
   flex-direction: column;
   gap: 6px;
   flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .device-name {
@@ -135,6 +141,9 @@ li:hover .device-mac {
   border-radius: 12px;
   width: 32px;
   height: 32px;
+  padding: 0;
+  margin: 0 0 0 10px;
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -144,8 +153,21 @@ li:hover .device-mac {
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-li:hover .delete {
+li:hover .delete,
+li:focus-within .delete {
   opacity: 1;
   pointer-events: auto;
   transform: scale(1.05);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+@media (hover: none) {
+  .delete {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
